@@ -1,0 +1,16 @@
+{ "skeleton": { "images": "/d/GDC/Component Asset Background/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "portal", "bone": "root", "attachment": "portal" }
+],
+"skins": {
+	"default": {
+		"portal": {
+			"portal": { "x": 67, "y": -64, "width": 124, "height": 130 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

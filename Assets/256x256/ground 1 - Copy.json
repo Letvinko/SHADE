@@ -1,0 +1,36 @@
+{ "skeleton": { "images": "/d/GDC/Component Asset Background/ground/256x256/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "tanah dan rumput", "bone": "root", "attachment": "tanah dan rumput" },
+	{ "name": "tanah dan rumput kiri", "bone": "root", "attachment": "tanah dan rumput kiri" },
+	{ "name": "tanah dan rumput kanan", "bone": "root", "attachment": "tanah dan rumput kanan" },
+	{ "name": "tanjakan kanan", "bone": "root", "attachment": "tanjakan kanan" },
+	{ "name": "tanjakan kiri", "bone": "root", "attachment": "tanjakan kiri" },
+	{ "name": "tanah", "bone": "root", "attachment": "tanah" }
+],
+"skins": {
+	"default": {
+		"tanah dan rumput": {
+			"tanah dan rumput": { "x": 128, "y": -132, "width": 258, "height": 250 }
+		},
+		"tanah dan rumput kiri": {
+			"tanah dan rumput kiri": { "x": 128, "y": -128, "width": 258, "height": 258 }
+		},
+		"tanah dan rumput kanan": {
+			"tanah dan rumput kanan": { "x": 128, "y": -132, "width": 258, "height": 250 }
+		},
+		"tanjakan kanan": {
+			"tanjakan kanan": { "x": 128, "y": -128, "width": 258, "height": 258 }
+		},
+		"tanjakan kiri": {
+			"tanjakan kiri": { "x": 128, "y": -128, "width": 258, "height": 258 }
+		},
+		"tanah": {
+			"tanah": { "x": 128, "y": -132.5, "width": 258, "height": 249 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

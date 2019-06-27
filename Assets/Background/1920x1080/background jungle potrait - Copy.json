@@ -1,0 +1,16 @@
+{ "skeleton": { "images": "/d/GDC/Component Asset Background/background/1920x1080/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "rumput 1", "bone": "root", "attachment": "rumput 1" }
+],
+"skins": {
+	"default": {
+		"rumput 1": {
+			"rumput 1": { "x": 540, "y": -960, "width": 1082, "height": 1922 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
