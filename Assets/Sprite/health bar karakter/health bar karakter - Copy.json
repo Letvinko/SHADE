@@ -1,0 +1,56 @@
+{ "skeleton": { "images": "/d/GDC/Component Asset Background/health bar/health bar karakter/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "hati full", "bone": "root", "attachment": "hati full" },
+	{ "name": "serangan hati 1 12", "bone": "root", "attachment": "serangan hati 1 12" },
+	{ "name": "serangan hati 1", "bone": "root", "attachment": "serangan hati 1" },
+	{ "name": "serangan hati 2 12", "bone": "root", "attachment": "serangan hati 2 12" },
+	{ "name": "serangan hati 2", "bone": "root", "attachment": "serangan hati 2" },
+	{ "name": "serangan hati 3 12", "bone": "root", "attachment": "serangan hati 3 12" },
+	{ "name": "serangan hati 3", "bone": "root", "attachment": "serangan hati 3" },
+	{ "name": "serangan hati 4 12", "bone": "root", "attachment": "serangan hati 4 12" },
+	{ "name": "serangan hati 4", "bone": "root", "attachment": "serangan hati 4" },
+	{ "name": "serangan hati 5 12", "bone": "root", "attachment": "serangan hati 5 12" },
+	{ "name": "serangan hati 5", "bone": "root", "attachment": "serangan hati 5" }
+],
+"skins": {
+	"default": {
+		"hati full": {
+			"hati full": { "x": 310, "y": -105, "width": 622, "height": 126 }
+		},
+		"serangan hati 1 12": {
+			"serangan hati 1 12": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 1": {
+			"serangan hati 1": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 2 12": {
+			"serangan hati 2 12": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 2": {
+			"serangan hati 2": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 3 12": {
+			"serangan hati 3 12": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 3": {
+			"serangan hati 3": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 4 12": {
+			"serangan hati 4 12": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 4": {
+			"serangan hati 4": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 5 12": {
+			"serangan hati 5 12": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		},
+		"serangan hati 5": {
+			"serangan hati 5": { "x": 310, "y": -100.5, "width": 622, "height": 135 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
