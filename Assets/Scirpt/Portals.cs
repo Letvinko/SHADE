@@ -15,7 +15,7 @@ public class Portals : MonoBehaviour {
 
     IEnumerator Teleport()
     {
-        yield return new WaitForSeconds (2);
+        yield return new WaitForSeconds (1);
         player.transform.position = new Vector2(portal.transform.position.x , portal.transform.position.y);
     }
 }
