@@ -74,13 +74,18 @@ public class MovementPlayer : MonoBehaviour {
         if (isGrounded == true)
         {
             extraJump = extraJumpValue;
+            anm.SetBool("SetJump", false);
+        }
+        else if (isGrounded == false)
+        {
+            anm.SetBool("SetJump", true);
         }
        
 
         if ((Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.W)) && extraJump > 0)
         {
             rb2d.velocity = Vector2.up * jumpforce;
-            extraJump--;
+            extraJump--;            
         }
         
 
