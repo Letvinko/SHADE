@@ -353,6 +353,9 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
+    <Compile Include="Assets\Scirpt\Attack.cs" />
+    <Compile Include="Assets\Scirpt\AttackForBoss.cs" />
+    <Compile Include="Assets\Scirpt\BossStage.cs" />
     <Compile Include="Assets\Scirpt\CameraFollowing.cs" />
     <Compile Include="Assets\Scirpt\CharacterController2D.cs" />
     <Compile Include="Assets\Scirpt\EnmyScript.cs" />

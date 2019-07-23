@@ -4,9 +4,11 @@ using UnityEngine;
 
 
 public class MovementPlayer : MonoBehaviour {
-    public EnmyScript enmyscrpt;
+    //public EnmyScript enmyscrpt;
+    public int Heakth;
+    public GameObject deathPlyr;
 
-    private Rigidbody2D rb2d;    
+    private Rigidbody2D rb2d;
 
     public float runspeed = 40f;
 
@@ -23,8 +25,16 @@ public class MovementPlayer : MonoBehaviour {
     public Transform groundcheck;
     public float checkradius;
     public LayerMask whatisground;
-    private bool Cekhit;
-    public LayerMask hitceki;
+
+    /*public bool Cekhit = false;
+    public Vector2 resMove;
+    private float temp;
+    public float Knockback;*/
+    public Vector2 resMove;
+    public float Knockback;
+    public float KnockbackLength;
+    public float KnockbackCount;
+    public bool knockFromRight;
 
     // Use this for initialization
     void Start()
@@ -32,27 +42,42 @@ public class MovementPlayer : MonoBehaviour {
         extraJump = extraJumpValue;
         rb2d = GetComponent<Rigidbody2D>();
         anm = GetComponent<Animator>();
+        //enmyscrpt = GetComponent<EnmyScript>();
     }
 
-    // Update is called once per frame    
+    // Update is called once per frame
 
     void FixedUpdate()
     {
-        Cekhit = enmyscrpt.Hitcek;
         isGrounded = Physics2D.OverlapCircle(groundcheck.position, checkradius,whatisground);
-        //Debug.Log(isGrounded);
-        Debug.Log(Cekhit+"1");
-        float xAxis = Input.GetAxis("Horizontal");        
+
+        float xAxis = Input.GetAxis("Horizontal");
+        resMove = new Vector2(xAxis*(runspeed* Time.fixedDeltaTime),rb2d.velocity.y);
         //Vector2 direct = new Vector2(xAxis, 0);
-        rb2d.velocity = new Vector2(xAxis*(runspeed* Time.fixedDeltaTime),rb2d.velocity.y);
+        //temp = xAxis;
+        if(KnockbackCount <= 0){
+          rb2d.velocity = resMove;
+        }else{
+          if (knockFromRight)
+            rb2d.velocity = new Vector2(-Knockback,Knockback);
+          if(!knockFromRight)
+            rb2d.velocity = new Vector2(Knockback,Knockback);
+          KnockbackCount -= Time.deltaTime;
+        }
 
         if (Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.W)) {
-            anm.SetTrigger("TakeOf");
+            anm.SetTrigger("TakeOf");            
+        }
+
+        if(Input.GetKeyDown(KeyCode.Mouse0)){
+          anm.SetBool("SetAttack",true);
+        }else if (Input.GetKeyUp(KeyCode.Mouse0)){
+          anm.SetBool("SetAttack",false);
         }
 
         if(xAxis > 0) {
             anm.SetBool("Setlari", true);
-        } 
+        }
         else if (xAxis == 0)
         {
             anm.SetBool("Setlari", false);
@@ -70,26 +95,13 @@ public class MovementPlayer : MonoBehaviour {
 
         if (arahKanan == false && xAxis > 0)
         {
-            Flip();            
+            Flip();
         }
         else if (arahKanan == true && xAxis < 0) {
             Flip();
         }
 
-        
-        Debug.Log(Cekhit + "2");
-        if (Cekhit == true)
-        {
-            if (arahKanan == false && xAxis > 0)
-            {
-                Debug.Log("Terdorong ke kiri");
-            }
-            else if (arahKanan == true && xAxis < 0)
-            {
-                Debug.Log("Terdorong ke kanan");
-            }
-        }        
-
+        //cekKnock(Cekhit,temp);
     }
 
     void Update()
@@ -103,14 +115,14 @@ public class MovementPlayer : MonoBehaviour {
         {
             anm.SetBool("SetJump", true);
         }
-       
+
 
         if ((Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.W)) && extraJump > 0)
-        {            
+        {
             rb2d.velocity = Vector2.up * jumpforce;
-            extraJump--;            
+            extraJump--;
         }
-        
+
 
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -120,15 +132,22 @@ public class MovementPlayer : MonoBehaviour {
         else if (Input.GetKeyUp(KeyCode.S))
         {
             rb2d.gravityScale = 7f;
-        }              
+        }
+
+        if (Heakth < 1) {
+            deathPlyr.SetActive(true);
+            GameObject exp = Instantiate(deathPlyr, transform.position, transform.rotation);
+            Destroy(exp, 5f);
+            Destroy(this.gameObject);
+        }
 
     }
 
     void Flip() {
-        arahKanan = !arahKanan;        
+        arahKanan = !arahKanan;
         Vector3 direction = transform.localScale;
         direction.x *= -1;
-        transform.localScale = direction;        
+        transform.localScale = direction;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -144,4 +163,19 @@ public class MovementPlayer : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(attackPost.position, attackrange);
     }*/
+
+    /*public void cekKnock(bool cek,float temp)
+    {
+        if(cek == false){
+          rb2d.velocity = resMove;
+          Cekhit = false;
+        }else{
+          if(temp > 0){
+            transform.Translate(Vector2.right * 20f * Time.deltaTime);
+          }else if(temp < 0){
+            transform.Translate(Vector2.left * 20f * Time.deltaTime);
+          }
+        }
+    }*/
+
 }
