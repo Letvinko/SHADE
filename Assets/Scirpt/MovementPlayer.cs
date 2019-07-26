@@ -4,9 +4,12 @@ using UnityEngine;
 
 
 public class MovementPlayer : MonoBehaviour {
-    //public EnmyScript enmyscrpt;
+    private GameController gc;
     public int Heakth;
     public GameObject deathPlyr;
+    public static bool HealtBonus1;
+    public static bool InfoGameover;
+    public static int infodarah;
 
     private Rigidbody2D rb2d;
 
@@ -42,7 +45,7 @@ public class MovementPlayer : MonoBehaviour {
         extraJump = extraJumpValue;
         rb2d = GetComponent<Rigidbody2D>();
         anm = GetComponent<Animator>();
-        //enmyscrpt = GetComponent<EnmyScript>();
+        gc = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -106,6 +109,13 @@ public class MovementPlayer : MonoBehaviour {
 
     void Update()
     {
+        infodarah = Heakth;
+        if (HealtBonus1) {
+            Heakth+=2;
+            HealtBonus1 = false;
+        }
+
+
         if (isGrounded == true)
         {
             extraJump = extraJumpValue;
@@ -134,11 +144,16 @@ public class MovementPlayer : MonoBehaviour {
             rb2d.gravityScale = 7f;
         }
 
-        if (Heakth < 1) {
+        if (Heakth < 1)
+        {
             deathPlyr.SetActive(true);
             GameObject exp = Instantiate(deathPlyr, transform.position, transform.rotation);
-            Destroy(exp, 5f);
+            Destroy(exp, 3.5f);
             Destroy(this.gameObject);
+            InfoGameover = true;
+        }
+        else{
+            InfoGameover = false;
         }
 
     }
@@ -150,13 +165,13 @@ public class MovementPlayer : MonoBehaviour {
         transform.localScale = direction;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Hitarea") {
             Debug.Log("Damage Taken");
             rb2d.velocity = Vector2.left * 400f;
         }
-    }
+    }*/
 
     /*private void OnDrawGizmosSelected()
     {

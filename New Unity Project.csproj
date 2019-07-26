@@ -353,16 +353,23 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
+    <Compile Include="Assets\IntroBehav.cs" />
     <Compile Include="Assets\Scirpt\Attack.cs" />
     <Compile Include="Assets\Scirpt\AttackForBoss.cs" />
     <Compile Include="Assets\Scirpt\BossStage.cs" />
     <Compile Include="Assets\Scirpt\CameraFollowing.cs" />
     <Compile Include="Assets\Scirpt\CharacterController2D.cs" />
     <Compile Include="Assets\Scirpt\EnmyScript.cs" />
+    <Compile Include="Assets\Scirpt\GameController.cs" />
+    <Compile Include="Assets\Scirpt\HealthBar.cs" />
+    <Compile Include="Assets\Scirpt\HealthDisplay.cs" />
+    <Compile Include="Assets\Scirpt\HealthIndicatorBoss.cs" />
+    <Compile Include="Assets\Scirpt\MainMenu.cs" />
     <Compile Include="Assets\Scirpt\MovementPlayer.cs" />
     <Compile Include="Assets\Scirpt\MovingPlatform.cs" />
     <Compile Include="Assets\Scirpt\NextLevel.cs" />
     <Compile Include="Assets\Scirpt\Portals.cs" />
+    <Compile Include="Assets\Scirpt\Spike.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingProject\AstarPathfindingProject.asmdef" />

@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class EnmyScript : MonoBehaviour {
     public AIPath aipath;
-    public GameObject death;
+    public GameObject death;    
 
     public LayerMask whatisPlayer;
     public Transform attackPost;
@@ -43,7 +43,7 @@ public class EnmyScript : MonoBehaviour {
             aipath.maxSpeed = 0;
             dazedTime -= Time.deltaTime;
        }
-
+        
 	}
 
     private void OnDrawGizmosSelected()
@@ -69,11 +69,12 @@ public class EnmyScript : MonoBehaviour {
 
     public void TakeDamage(int damage){
        dazedTime = StartDazedTime;
-      if (Warna.ToString() == Cekwarna ){
+        if (Warna.ToString() == Cekwarna) {
             death.SetActive(true);
             GameObject exp = Instantiate(death, transform.position, transform.rotation);
             Destroy(exp, 1f);
             Destroy(this.gameObject);
+            MovementPlayer.HealtBonus1 = true;            
       }
       Debug.Log(Cekwarna);
     }
