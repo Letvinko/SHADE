@@ -109,6 +109,8 @@ public class MovementPlayer : MonoBehaviour {
 
     void Update()
     {
+        //int randgent = Random.Range(0,2);
+        //Debug.Log(randgent);
         infodarah = Heakth;
         if (HealtBonus1) {
             Heakth+=2;
@@ -163,6 +165,11 @@ public class MovementPlayer : MonoBehaviour {
         Vector3 direction = transform.localScale;
         direction.x *= -1;
         transform.localScale = direction;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Heakth -= damage;        
     }
 
     /*private void OnTriggerEnter2D(Collider2D collision)

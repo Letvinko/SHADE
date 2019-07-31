@@ -356,6 +356,7 @@
     <Compile Include="Assets\IntroBehav.cs" />
     <Compile Include="Assets\Scirpt\Attack.cs" />
     <Compile Include="Assets\Scirpt\AttackForBoss.cs" />
+    <Compile Include="Assets\Scirpt\BossEnterance.cs" />
     <Compile Include="Assets\Scirpt\BossStage.cs" />
     <Compile Include="Assets\Scirpt\CameraFollowing.cs" />
     <Compile Include="Assets\Scirpt\CharacterController2D.cs" />
