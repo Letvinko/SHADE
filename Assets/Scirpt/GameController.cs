@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
     private bool restart;
     private bool quit;
     protected bool restartIndctr;
+
+    public GameObject portalEND;
     // Use this for initialization
     void Start () {
         restart = false;
@@ -50,6 +52,10 @@ public class GameController : MonoBehaviour {
             quit_text.text = "";
         }
         game_over(gameover);
+
+        if (BossStage.Health == 0) {
+            portalEND.SetActive(true);
+        }
     }
 
     public void game_over(bool x)

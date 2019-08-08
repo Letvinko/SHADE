@@ -9,8 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 5cbbeb9c0bb3d6a41b15d107b94d7544
   - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: 223f40c490dafe24c983e72306bacad7
+  - enabled: 1
+    path: Assets/Scenes/Cutscene2.unity
+    guid: d52ba29aed7e5c247967e448575186b1
+  - enabled: 1
+    path: Assets/Scenes/Cutscene3.unity
+    guid: b637d584a84522a408b488acd4f1bfe9
+  - enabled: 1
+    path: Assets/Scenes/Cutscene4.unity
+    guid: 581e0657d1fab6f44a71b4d397fbd1f7
+  - enabled: 1
     path: Assets/Scenes/Shade level 1.unity
     guid: 517f96ccf4e96a3458edc20c9399300b
   - enabled: 1
     path: Assets/Scenes/Shade Boss Scene.unity
     guid: d3dfdc5ff90cac94c9701b2f5674859f
+  - enabled: 1
+    path: Assets/Scenes/The End.unity
+    guid: cfec1b08e28e68e4e9548be0e2b1bde3

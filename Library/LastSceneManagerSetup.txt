@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Shade level 1.unity
+- path: Assets/Scenes/Cutscene4.unity
   isLoaded: 1
   isActive: 1

@@ -360,6 +360,7 @@
     <Compile Include="Assets\Scirpt\BossStage.cs" />
     <Compile Include="Assets\Scirpt\CameraFollowing.cs" />
     <Compile Include="Assets\Scirpt\CharacterController2D.cs" />
+    <Compile Include="Assets\Scirpt\CutScene.cs" />
     <Compile Include="Assets\Scirpt\EnmyScript.cs" />
     <Compile Include="Assets\Scirpt\GameController.cs" />
     <Compile Include="Assets\Scirpt\HealthBar.cs" />
@@ -370,6 +371,7 @@
     <Compile Include="Assets\Scirpt\MovingPlatform.cs" />
     <Compile Include="Assets\Scirpt\NextLevel.cs" />
     <Compile Include="Assets\Scirpt\Portals.cs" />
+    <Compile Include="Assets\Scirpt\Quit.cs" />
     <Compile Include="Assets\Scirpt\Spike.cs" />
   </ItemGroup>
   <ItemGroup>
