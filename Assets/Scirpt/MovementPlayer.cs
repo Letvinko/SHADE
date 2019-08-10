@@ -78,7 +78,11 @@ public class MovementPlayer : MonoBehaviour {
           anm.SetBool("SetAttack",false);
         }
 
-        if(xAxis > 0) {
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
+            FindObjectOfType<Sound>().play("Run");
+        }
+
+        if(xAxis > 0) {            
             anm.SetBool("Setlari", true);
         }
         else if (xAxis == 0)
@@ -87,7 +91,7 @@ public class MovementPlayer : MonoBehaviour {
         }
 
         if (xAxis < 0)
-        {
+        {            
             anm.SetBool("Setlari", true);
         }
         else if (xAxis == 0)

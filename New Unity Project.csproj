@@ -370,8 +370,11 @@
     <Compile Include="Assets\Scirpt\MovementPlayer.cs" />
     <Compile Include="Assets\Scirpt\MovingPlatform.cs" />
     <Compile Include="Assets\Scirpt\NextLevel.cs" />
+    <Compile Include="Assets\Scirpt\PauseMenu.cs" />
     <Compile Include="Assets\Scirpt\Portals.cs" />
     <Compile Include="Assets\Scirpt\Quit.cs" />
+    <Compile Include="Assets\Scirpt\Sound.cs" />
+    <Compile Include="Assets\Scirpt\Sound1.cs" />
     <Compile Include="Assets\Scirpt\Spike.cs" />
   </ItemGroup>
   <ItemGroup>

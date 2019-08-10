@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CutScene : MonoBehaviour {
     public Animator transition;
+    public Animator MusicAnim;
     public string next;
 
 
@@ -17,11 +18,17 @@ public class CutScene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         StartCoroutine(SceneTransition());
-	}
+        StartCoroutine(SceneTransition0());
+    }
 
     IEnumerator SceneTransition() {
-        transition.SetTrigger("end");
+        transition.SetTrigger("end");        
         yield return new WaitForSeconds(10f);
         SceneManager.LoadScene(next);
+    }
+    IEnumerator SceneTransition0()
+    {        
+        MusicAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(2f);        
     }
 }
