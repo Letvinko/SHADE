@@ -39,6 +39,8 @@ public class MovementPlayer : MonoBehaviour {
     public float KnockbackCount;
     public bool knockFromRight;
 
+    public AudioSource walksound;
+
     // Use this for initialization
     void Start()
     {
@@ -73,7 +75,8 @@ public class MovementPlayer : MonoBehaviour {
         }
 
         if(Input.GetKeyDown(KeyCode.Mouse0)){
-          anm.SetBool("SetAttack",true);
+            FindObjectOfType<Sound>().play("Hit");
+            anm.SetBool("SetAttack",true);
         }else if (Input.GetKeyUp(KeyCode.Mouse0)){
           anm.SetBool("SetAttack",false);
         }
@@ -84,6 +87,7 @@ public class MovementPlayer : MonoBehaviour {
 
         if(xAxis > 0) {            
             anm.SetBool("Setlari", true);
+            walksound.Play();
         }
         else if (xAxis == 0)
         {
@@ -91,7 +95,8 @@ public class MovementPlayer : MonoBehaviour {
         }
 
         if (xAxis < 0)
-        {            
+        {
+            walksound.Play();
             anm.SetBool("Setlari", true);
         }
         else if (xAxis == 0)
@@ -156,6 +161,7 @@ public class MovementPlayer : MonoBehaviour {
             GameObject exp = Instantiate(deathPlyr, transform.position, transform.rotation);
             Destroy(exp, 3.5f);
             Destroy(this.gameObject);
+            FindObjectOfType<Sound>().play("DeathPlyr");
             InfoGameover = true;
         }
         else{

@@ -76,9 +76,11 @@ public class BossStage : MonoBehaviour {
 
         if (health < 1) {
             deathBoss.SetActive(true);
+            FindObjectOfType<Sound>().play("DeathBoss");
             GameObject exp = Instantiate(deathBoss, transform.position, transform.rotation);
             Destroy(exp, 2f);
             Destroy(this.gameObject);
+            
         }
 	}
 
@@ -115,12 +117,13 @@ public class BossStage : MonoBehaviour {
         if (waktuCDattack <= 0)
         {
             if (x)
-            {
+            {                
                 Collider2D[] enemiesDamage = Physics2D.OverlapCircleAll(attackPost.position, attackrange, whatisplayer);
                 for (int i = 0; i < enemiesDamage.Length; i++)
                 {
                     enemiesDamage[i].GetComponent<MovementPlayer>().TakeDamage(damage);
                 }
+                FindObjectOfType<Sound>().play("HitBoss");
             }
             waktuCDattack = JedaAttack;
         }

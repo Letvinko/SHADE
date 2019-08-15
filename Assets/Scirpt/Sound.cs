@@ -20,6 +20,7 @@ public class Sound : MonoBehaviour {
     void Start()
     {
         play("Theme");
+        play("Theme1");
     }
 
     public void play(string name) {

@@ -74,6 +74,7 @@ public class EnmyScript : MonoBehaviour {
             GameObject exp = Instantiate(death, transform.position, transform.rotation);
             Destroy(exp, 1f);
             Destroy(this.gameObject);
+            FindObjectOfType<Sound>().play("DeathEnmy");
             MovementPlayer.HealtBonus1 = true;            
       }
       Debug.Log(Cekwarna);
